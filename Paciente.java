@@ -1,9 +1,10 @@
 import java.util.PriorityQueue;
 public class Paciente<E> extends Comparable<E> implements PriorityQueue {
   public Paciente(String nombre, String enfermedad, char codigoEmergencia){
-  this.nombre = nombre;
-  this.enfermedad = enfermedad;
-  this.codigoEmergencia = codigoEmergencia;
+    this.nombre = nombre;
+    this.enfermedad = enfermedad;
+    this.codigoEmergencia = codigoEmergencia;
+  }
   
   public setNombre(String nombre){
     this.nombre = nombre;
