@@ -1,32 +1,47 @@
-import java.util.PriorityQueue;
-public class Paciente<E> extends Comparable<E> implements PriorityQueue {
-  public Paciente(String nombre, String enfermedad, char codigoEmergencia){
+public class Paciente implements Comparable<Paciente>{
+  protected String nombre;
+  protected String enfermedad;
+  protected String codigoEmergencia;
+
+    public Paciente(String nombre, String enfermedad, String codigoEmergencia){
     this.nombre = nombre;
     this.enfermedad = enfermedad;
     this.codigoEmergencia = codigoEmergencia;
   }
   
-  public setNombre(String nombre){
+  public void setNombre(String nombre){
     this.nombre = nombre;
   }
   
-  public getNombre(){
+  public String getNombre(){
     return nombre;
   }
   
-  public setEnfermedad(String enfermedad){
+  public void setEnfermedad(String enfermedad){
     this.enfermedad = enfermedad;
   }
   
-  public getEnfermedad(){
+  public String getEnfermedad(){
     return enfermedad;
   }
   
-  public setCodigoEmergencia(char codigoEmergencia){
+  public void setCodigoEmergencia(String codigoEmergencia){
     this.codigoEmergencia = codigoEmergencia;
   }
   
-  public getCodigoEmergencia(){
+  public String getCodigoEmergencia(){
     return codigoEmergencia;
+  }
+
+   // Overriding the compare method to sort the age 
+
+    /**
+     *
+     * @param P
+     * @return
+     */
+      @Override
+  public int compareTo(Paciente P){
+    return (this.codigoEmergencia).compareTo(P.codigoEmergencia);
   }
 }
