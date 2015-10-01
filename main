@@ -4,14 +4,7 @@ import java.io.*;
 
 public class main {
 
-    /**
-     * @param args the command line arguments
-     * @throws java.io.FileNotFoundException
-     */
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        // TODO code application logic here
-
-       String [] vectorCadenas = new String[4];
+String [] vectorCadenas = new String[5];
        int n = 0;
      
       File archivo = null;
@@ -22,9 +15,12 @@ public class main {
          archivo = new File ("Pacientes.txt");
          fr = new FileReader (archivo);
          br = new BufferedReader(fr);
-         String linea;
-         while((linea=br.read())!=null)
+         String linea="a";
+         while(linea !=null){
+            linea=br.readLine();
             vectorCadenas[n]=linea;
+            n++;
+        }
       }
       catch(Exception e){
          e.printStackTrace();
@@ -37,11 +33,5 @@ public class main {
             e2.printStackTrace();
          }
       }
-      
-      System.out.println(vectorCadenas[0]);
-      System.out.println(vectorCadenas[1]);
-      System.out.println(vectorCadenas[0]);
-      System.out.println(vectorCadenas[0]);
-      
-   }
+
 }
